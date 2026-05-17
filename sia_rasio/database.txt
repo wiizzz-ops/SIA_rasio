@@ -1,0 +1,25 @@
+-- 1. Bikin databasenya dulu
+CREATE DATABASE db_sia_rasio;
+USE db_sia_rasio;
+
+-- 2. Bikin tabel untuk menyimpan input keuangan dan hasil rasionya
+CREATE TABLE data_keuangan (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nama_perusahaan VARCHAR(100) NOT NULL,
+    tahun_periode YEAR NOT NULL,
+    
+    -- Inputan Laporan Keuangan (Pakai DECIMAL agar bisa simpan angka besar)
+    aset_lancar DECIMAL(15,2) NOT NULL,
+    kewajiban_lancar DECIMAL(15,2) NOT NULL,
+    laba_bersih DECIMAL(15,2) NOT NULL,
+    total_aset DECIMAL(15,2) NOT NULL,
+    total_utang DECIMAL(15,2) NOT NULL,
+    
+    -- Hasil Perhitungan Rasio (Tersimpan otomatis nanti dari backend)
+    current_ratio DECIMAL(10,2),
+    roa DECIMAL(10,2),
+    debt_ratio DECIMAL(10,2),
+    
+    -- Tanggal input data
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
