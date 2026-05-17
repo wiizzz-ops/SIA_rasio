@@ -44,7 +44,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $debt_ratio = 0;
     }
 
-    // 4. Fitur Tambahan: Interpretasi Hasil (Biar Keren 😎)
+    // 4. Fitur Tambahan: Interpretasi Hasil 
     // Logika sederhana: 
     // Current Ratio bagus jika > 1.5, ROA bagus jika > 0.05 (5%), Debt Ratio bagus jika < 0.5 (50%)
     $status_likuiditas   = ($current_ratio > 1.5) ? "Baik" : "Kurang Baik";
